@@ -13,7 +13,7 @@ mc_questions = (
 mc_answers = ['You will get Full Mark',
               'Minus 10 marks from overall mark but not below 40',
               'Anfortunately, you will get Mark = 0',
-              'Deferrall reassessment',
+              'Deferral reassessment',
               'Late Submission',  'MC']
 
 def isOnTime():
