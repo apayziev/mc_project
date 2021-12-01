@@ -44,7 +44,7 @@ def within24_hours():
             elif user_input == 'no':
                 print(f"\n{mc_answers[1]}\n")
             else:
-                print("You response is incorrect. Type again!!!")
+                print("Your response is incorrect. Type again!!!")
                 within24_hours()
         elif user_input == 'no':
             print(f"\n{mc_answers[1]}\n")
