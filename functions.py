@@ -26,7 +26,7 @@ def isOnTime():
     elif user_input == 'no':
         within24_hours()
     else:
-        print("Your response is incorrect. Type again!!!")
+        print("You response is incorrect. Type again!!!")
         isOnTime()
     
 def within24_hours():
@@ -49,11 +49,47 @@ def within24_hours():
         elif user_input == 'no':
             print(f"\n{mc_answers[1]}\n")
         else:
-            print("Your response is incorrect. Type again!!!")
+            print("You response is incorrect. Type again!!!")
             within24_hours()
     elif user_input == 'no':
         submitted_within_5days()
     else:
-        print("Your response is incorrect. Type again!!!")
+        print("You response is incorrect. Type again!!!")
         within24_hours()
         
+def submitted_within_5days():
+    """This function asks the user CW submitted within 5 days or not
+    and performs the remaining operations """
+    
+    user_input = str(input(f"{mc_questions[3]}\n>>>")).lower()
+    if user_input == 'yes':
+        user_input = str(input(f"{mc_questions[2]}\n>>>")).lower()
+        if user_input == 'yes':
+            print(f"\n---> {mc_answers[-1]} (late submission option)")
+            user_input = str(input(f"{mc_questions[-1]}\n>>>")).lower()
+            if user_input =='yes':
+                print(f"\n{mc_answers[0]}\n")
+            elif user_input =='no':
+                print(f"\n{mc_answers[2]}")
+            else:
+                print("You response is incorrect. Type again!!!")
+                submitted_within_5days()
+        elif user_input == 'no':
+            print(f"\n{mc_answers[2]}\n")
+        else:
+            print("You response is incorrect. Type again!!!")
+            submitted_within_5days()
+    elif user_input == 'no':
+        user_input = str(input(f"{mc_questions[2]}\n>>>")).lower()
+        if user_input == 'yes':
+            print(f"\n-->{mc_answers[-1]} (non-submission/deferall before specified deadline)"
+                  f"\n--> Accepted \n-->{mc_answers[3]}\n")
+        elif user_input == 'no':
+            print(f"\n{mc_answers[2]}\n")
+        else:
+            print("You response is incorrect. Type again!!!")
+            submitted_within_5days()
+    else:
+        print("You response is incorrect. Type again!!!")
+        submitted_within_5days()
+
