@@ -26,7 +26,7 @@ def isOnTime():
     elif user_input == 'no':
         within24_hours()
     else:
-        print("You response is incorrect. Type again!!!")
+        print("Your response is incorrect. Type again!!!")
         isOnTime()
     
 def within24_hours():
@@ -49,11 +49,11 @@ def within24_hours():
         elif user_input == 'no':
             print(f"\n{mc_answers[1]}\n")
         else:
-            print("You response is incorrect. Type again!!!")
+            print("Your response is incorrect. Type again!!!")
             within24_hours()
     elif user_input == 'no':
         submitted_within_5days()
     else:
-        print("You response is incorrect. Type again!!!")
+        print("Your response is incorrect. Type again!!!")
         within24_hours()
         
