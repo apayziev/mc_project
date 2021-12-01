@@ -16,6 +16,7 @@ mc_answers = ['You will get Full Mark',
               'Deferral reassessment',
               'Late Submission',  'MC']
 
+
 def isOnTime():
     """This function asks user wheather he/she uploaded it on time or not"""
     
@@ -28,3 +29,27 @@ def isOnTime():
         print("You response is incorrect. Type again!!!")
         isOnTime()
     
+def within24_hours():
+    """This function does next step if isOnTime() function == no """
+    
+    user_input = str(input(f"{mc_questions[1]}\n>>>")).lower()
+    if user_input == 'yes':
+        print(f"\n---> {mc_answers[4]}")
+        user_input = str(input(f"{mc_questions[2]}\n>>>")).lower()
+        if user_input == 'yes':
+            print(f"\n---> {mc_answers[-1]}")
+            user_input = str(input(f"{mc_questions[-1]}\n>>>")).lower()
+            if user_input == 'yes':
+                print(f"\n{mc_answers[0]}\n")
+            elif user_input == 'no':
+                print(f"\n{mc_answers[1]}\n")
+            else:
+                print("You response is incorrect. Type again!!!")
+                within24_hours()
+        elif user_input == 'no':
+            print(f"\n{mc_answers[1]}\n")
+        else:
+            print("You response is incorrect. Type again!!!")
+            within24_hours()
+    elif user_input == 'no':
+        submitted_within_5days()
